@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/home/home.css') }}">
+{% endblock %}
+
+
+{% block body %}
+<div class="test">
+    <p class="p-block">Hello {{ name }}</p>
+    <button id="btn">Clic</button>
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset("js/home/home.js") }}"></script>
+{% endblock %}
+
