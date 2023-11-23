@@ -8,4 +8,8 @@
     background-color: #4158D0;
     background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 66%);
 }
+.card-img-top {
+    max-height: 500px;
+}
 
+/* style="background-image: url('../src/images/hand_painted_alcohol_ink_background_with_gold_glitter_2205.jpg')" style="background-image: right" style="background-size: cover" */
