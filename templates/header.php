@@ -13,7 +13,7 @@
               <a class="nav-link" href="#">Galerie</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html.twig">
+              <a class="nav-link" href="/contact">
                 Contact
               </a>
             </li>
