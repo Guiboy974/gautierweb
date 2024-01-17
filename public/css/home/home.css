@@ -1,3 +1,9 @@
+* {
+    background-image: url('images/hand_painted_alcohol_ink_background_with_gold_glitter_2205.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .navbar-brand {
     font-family: 'Great Vibes', cursive;
 }
@@ -11,5 +17,3 @@
 .card-img-top {
     max-height: 500px;
 }
-
-/* style="background-image: url('../src/images/hand_painted_alcohol_ink_background_with_gold_glitter_2205.jpg')" style="background-image: right" style="background-size: cover" */

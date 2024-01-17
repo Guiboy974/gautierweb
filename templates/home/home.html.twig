@@ -14,24 +14,25 @@
 {% block javascripts %}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="{{ asset("js/home/home.js") }}"></script>
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
 {% endblock %}
 
 {% block main %}
+
 {# slider #}
+
         <div id="carouselExampleAutoplaying" class="carousel slide my-3" data-bs-ride="carousel">
             <div class="carousel-inner rounded">
               <div class="carousel-item active">
-                <img src="../src/images/IMG-chat2.jpg" class="d-block w-100" alt="peinture-animaux">
+                <img src="{{ asset('images/IMG-chat2.jpg') }}" class="d-block w-100" alt="peinture-animaux">
               </div>
               <div class="carousel-item">
-                <img src="../src/images/IMG-20231120-WA0014.jpg" class="d-block w-100" alt="peinture-scene">
+                <img src="{{ asset('images/IMG-20231120-WA0014') }}.jpg" class="d-block w-100" alt="peinture-scene">
               </div>
               <div class="carousel-item">
-                <img src="../src/images/IMG-20231120-WA0015.jpg" class="d-block w-100" alt="peinture-paysage">
+                <img src="{{ asset('images/IMG-20231120-WA0015') }}.jpg" class="d-block w-100" alt="peinture-paysage">
               </div>
               <div class="carousel-item">
-                <img src="../src/images/IMG-20231120-WA0063.jpg" class="d-block w-100" alt="peinture">
+                <img src="{{ asset('images/IMG-20231120-WA0063') }}.jpg" class="d-block w-100" alt="peinture">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -45,21 +46,41 @@
           </div>
 
 {# a propos #}
+
 <div class="card text-center bg-transparent my-4">
     <div class="card-body">
       <h5 class="card-title my-3 fw-semibold text-primary-emphasis" style="font-size: 3em"><u>A Propos</u></h5>
       <p class="card-text my-3 fs-2">Découvrez l'univers artistique captivant de Gautier, une talentueuse <span>artiste peintre</span> passionnée depuis ses 12 ans. <br>Son amour pour l'art et la culture transparaît dans ses créations variées, allant de <em>portraits</em> expressifs à des représentations vibrantes <em>d'animaux</em> et d'<em>icônes religieuses</em>. <br>Explorez sa diversité artistique sur son site web. </p>
       <a href="#" class="btn btn-info rounded-5 my-3 fs-3">pour en savoir plus</a>
     </div>
-   <img src="../src/images/IMG-20231120-WA0086.jpg" class="img-fluid rounded-circle mx-auto my-3" style="width: 50%" alt="l'artiste">
+   <img src="{{ asset('images/IMG-20231120-WA0086.jpg') }}" class="img-fluid rounded-circle mx-auto my-3" style="width: 50%" alt="l'artiste">
         </div>
 
-        {# apercu galerie #}
+{# apercu galerie #}
+
 <div class="text-center my-4">
-  <h5 class="card-title my-3 fw-semibold" style="font-size: 3em"><u>Galerie</u></h5>
+  <h5 class="card-title my-3 fw-semibold text-primary-emphasis" style="font-size: 3em"><u>Galerie</u></h5>
 </div>
 
-        <div class="row row-cols-1 row-cols-md-2 g-4">
+<div class="container-fluid" >
+  <div class="row">
+      <img class="col-xs p-1" alt="peinture chien" src="{{ asset('images/IMG-charlie.jpg')}}" />
+ 
+  
+      <img class="col-xs p-1" alt="peinture chat" src="{{ asset('images/IMG-chat2.jpg')}}" />
+ 
+ 
+      <img  class="col-xs p-1" alt="peinture épéphant" src="{{ asset('images/IMG-elephant.jpg')}}" />
+ 
+ 
+      <img class="col-xs p-1" alt="peinture tigre" src="{{ asset('images/IMG-tigre.jpg')}}" />
+ 
+  </div>
+  {# ...{{ asset('images/')}} #}
+</div>
+
+
+        {# <div class="row row-cols-1 row-cols-md-2 g-4">
           <div class="col">
             <div class="card">
               <img src="../src/images/apercu/IMG-20231120-WA00062.jpg" class="card-img-top img-fluid" alt="peinture chien">
@@ -96,7 +117,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> #}
 {% endblock %}
 
 
