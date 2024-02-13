@@ -60,64 +60,34 @@
 
 <div class="text-center my-4">
   <h5 class="card-title my-3 fw-semibold text-primary-emphasis" style="font-size: 3em"><u>Galerie</u></h5>
+  <p class="card-text my-3 fs-2">Voici un petit aperçu des différentes peintures que vous retrouverez <a href="#" class="btn btn-info rounded-5 my-3 fs-3">ici</a>.</p>
 </div>
 
 <div class="container-fluid" >
-  <div class="row">
-      <img class="col-xs p-1" alt="peinture chien" src="{{ asset('images/IMG-charlie.jpg')}}" />
+  <div class="d-flex flex-wrap">
+    <div class="row flex-wrap justify-content-around">
+      <img class="p-2 w-25 h-auto" data-toglle="lightbox" alt="peinture chien" src="{{ asset('images/IMG-charlie.jpg')}}" />
  
-  
-      <img class="col-xs p-1" alt="peinture chat" src="{{ asset('images/IMG-chat2.jpg')}}" />
+      <img class="p-2 w-25 h-auto" alt="peinture chat" src="{{ asset('images/IMG-chat2.jpg')}}" />
  
+      <img  class="p-2 w-25 h-auto" alt="peinture épéphant" src="{{ asset('images/IMG-elephant.jpg')}}" />
+    </div>
+    <div class="row flex-wrap justify-content-around">
+      <img class="p-2 w-25 h-auto" alt="peinture portrait" src="{{ asset('images/IMG-portrait1.jpg')}}" />
+
+      <img class="p-2 w-25 h-auto" alt="peinture tigre" src="{{ asset('images/IMG-tigre.jpg')}}" />
+
+      <img class="p-2 w-25 h-auto" alt="icone religieuse" src="{{ asset('images/IMG-icone1.jpg')}}" />
+    </div>
  
-      <img  class="col-xs p-1" alt="peinture épéphant" src="{{ asset('images/IMG-elephant.jpg')}}" />
- 
- 
-      <img class="col-xs p-1" alt="peinture tigre" src="{{ asset('images/IMG-tigre.jpg')}}" />
- 
+  </div>
+  <div id="lightbox">
+
   </div>
   {# ...{{ asset('images/')}} #}
 </div>
 
 
-        {# <div class="row row-cols-1 row-cols-md-2 g-4">
-          <div class="col">
-            <div class="card">
-              <img src="../src/images/apercu/IMG-20231120-WA00062.jpg" class="card-img-top img-fluid" alt="peinture chien">
-              <div class="card-body">
-                <h5 class="card-title fs-1 fw-semibold">Animaux</h5>
-                <p class="card-text fs-3">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="../src/images/apercu/IMG-20231120-WA0050.jpg" class="card-img-top img-fluid" alt="peinture monument">
-              <div class="card-body">
-                <h5 class="card-title fs-1 fw-semibold">Monuments</h5>
-                <p class="card-text fs-3">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="../src/images/apercu/IMG-20231120-WA00462.jpg" class="card-img-top img-fluid" alt="peinture religieuse">
-              <div class="card-body">
-                <h5 class="card-title fs-1 fw-semibold">Icone</h5>
-                <p class="card-text fs-3">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="../src/images/apercu/IMG-20231120-WA0067.jpg" class="card-img-top img-fluid" alt="peinture enfant">
-              <div class="card-body">
-                <h5 class="card-title fs-1 fw-semibold">Afrique</h5>
-                <p class="card-text fs-3">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-          </div>
-        </div> #}
 {% endblock %}
 
 
