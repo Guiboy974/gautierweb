@@ -11,13 +11,19 @@
 
 {% block main %}
 
+
+<p class="p-3 text-center fs-2 fw-medium fst-italic">Une question, un projet, une expo? <br>Contactez moi!</p>
+
+
+{% form_theme form 'bootstrap_5_horizontal_layout.html.twig' %}
+
     {{ form_start(form) }}
     <div class="my-custom-class-for-errors">
         {{ form_errors(form) }}
         {{ errorMessage }}
     </div>
 
-    <div class="row">
+    <div class="col">
         <div class="col">
             {{ form_row(form.name) }}
         </div>
@@ -25,7 +31,7 @@
             {{ form_row(form.email) }}
         </div>
     </div>
-    <div class="row">
+    <div class="col">
         <div class="col" id="some-custom-id">
             {{ form_row(form.message) }}
         </div>
