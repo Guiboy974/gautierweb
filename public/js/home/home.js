@@ -1,17 +1,13 @@
-// Récupération des pièces depuis le fichier JSON
-// const reponse = await fetch("../src/galerie.json");
-// const animaux = await reponse.json();
+import 'bs5-lightbox';
+import Lightbox from 'bs5-lightbox';
 
-// for (let i = 0; i < animaux.length; i++){
+const options = {
+	keyboard: true,
+	size: 'default'
+};
 
-// const peinture = animaux[i];
-// const imagePeinture = document.createElement("img");
-// imagePeinture.src = peinture.images;
-// const nomPeinture = document.createElement("h2");
-// nomPeinture.innerText = peinture.nom;
-
-// const divGalerie1 = document.querySelector(".galerie1");
-// divGalerie1.appendChild(imagePeinture);
-// divGalerie1.appendChild(nomPeinture);
-// }
-
+document.querySelectorAll('.my-lightbox-toggle').forEach((el) => el.addEventListener('click', (e) => {
+	e.preventDefault();
+	const lightbox = new Lightbox(el, options);
+	lightbox.show();
+}));
