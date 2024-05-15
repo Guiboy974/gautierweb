@@ -1,33 +1,28 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ asset("css/home/home.css") }}">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset("css/home/home.css") }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 {% endblock %}
 
 {% block main %}
 
-<div class="container-fluid">
-    
-    <h2 class="card-title my-3 fw-semibold text-primary-emphasis">Peinture animal </h2>
-    <div class="d-flex flex-wrap">
-        <div class="row flex-wrap justify-content-around">
-            <img class="p-2 w-25 h-auto"src="{{ asset('images/IMG-chat1.jpg')}}" class="img-fluid" alt="peinture chien">
-            <img class="p-2 w-25 h-auto"src="{{ asset('images/IMG-charlie.jpg')}}" class="img-fluid" alt="">
-            <img class="p-2 w-25 h-auto"src="{{ asset('images/IMG-chat2.jpg')}}" class="img-fluid" alt="">
-            <img class="p-2 w-25 h-auto"src="{{ asset('images/IMG-chat3.jpg')}}" class="img-fluid" alt="">
-            <img class="p-2 w-25 h-auto"src="{{ asset('images/IMG-elephant.jpg')}}" class="img-fluid" alt="">
-            <img class="p-2 w-25 h-auto"src="{{ asset('images/IMG-lion.jpg')}}" class="img-fluid" alt="">
-            <img class="p-2 w-25 h-auto"src="{{ asset('images/IMG-oiseau.jpg')}}" class="img-fluid" alt="">
-            <img class="p-2 w-25 h-auto"src="{{ asset('images/IMG-pepette.jpg')}}" class="img-fluid" alt="">
-            <img class="p-2 w-25 h-auto"src="{{ asset('images/IMG-tigre.jpg')}}" class="img-fluid" alt="">
-        </div>
-    </div>
+    <div class="container-fluid">
 
-</div>
+        <h2 class="card-title my-3 fw-semibold text-primary-emphasis">Peinture animal </h2>
+        <div class="d-flex flex-wrap">
+            <div class="row flex-wrap justify-content-around">
+                {% for image in images %}
+                    <img class="p-2 w-25 h-auto img-fluid" src="{{ asset('images/galerie/' ~ image ) }}" alt="">
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
 
 {% endblock %}
