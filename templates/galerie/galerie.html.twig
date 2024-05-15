@@ -18,7 +18,7 @@
         <div class="d-flex flex-wrap">
             <div class="row flex-wrap justify-content-around">
                 {% for image in images %}
-                <a href="{{ asset('images/galerie/' ~ image ) }}" data-toggle="lightbox" data-gallery="mixedgallery" class="col-sm-4 w-25 p-2 " >
+                <a href="{{ asset('images/galerie/' ~ image ) }}" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 w-25 p-2 " >
                     <img class="img-fluid" src="{{ asset('images/galerie/' ~ image ) }}" alt="peinture">
                 </a>
                 {% endfor %}
