@@ -16,9 +16,21 @@
 
         <h2 class="card-title my-3 fw-semibold text-primary-emphasis">Peinture animal </h2>
         <div class="d-flex flex-wrap">
+            <ul>
+                <a href="{{ url('app_galerie')}}">Tout</a>
+                {% for categorie in categories %}
+                    <li>
+                        <a href="{{ url('app_galerie', {name: categorie.name, id: categorie.id}) }}">{{ categorie.name
+                            }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
             <div class="row flex-wrap justify-content-around">
                 {% for image in images %}
-                    <img class="p-2 w-25 h-auto img-fluid" src="{{ asset('images/galerie/' ~ image ) }}" alt="">
+                    <img class="p-2 w-25 h-auto img-fluid" src="{{ asset('images/galerie/' ~ image.filename ) }}"
+                         alt="{{
+                    image.altText
+                    }}">
                 {% endfor %}
             </div>
         </div>
