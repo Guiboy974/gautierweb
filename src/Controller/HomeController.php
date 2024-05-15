@@ -15,4 +15,12 @@ class HomeController extends AbstractController
             'name' => 'Gautier',
         ]);
     }
+
+    #[Route('/galerie/galerie.html.twig', name: 'app_galerie')]
+    public function show(): Response
+    {
+        return $this->render('galerie/galerie.html.twig', [
+            'name' => 'Galerie',
+        ]);
+    }
 }
