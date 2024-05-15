@@ -21,6 +21,7 @@ class HomeController extends AbstractController
     {
         return $this->render('galerie/galerie.html.twig', [
             'name' => 'Galerie',
+            'images' => array_filter(scandir("../public/images/galerie"), function ($val){return $val[0] != ".";})
         ]);
     }
 }
