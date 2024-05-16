@@ -10,21 +10,49 @@
 
 {% endblock %}
 
+
 {% block main %}
 
-    <div class="container-fluid">
+<div class="container-fluid">
 
-        <h2 class="card-title my-3 fw-semibold text-primary-emphasis">Peinture animal </h2>
-        <div class="d-flex flex-wrap">
-            <div class="row flex-wrap justify-content-around">
-                {% for image in images %}
-                <a href="{{ asset('images/galerie/' ~ image ) }}" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 w-25 p-2 " >
-                    <img class="img-fluid" src="{{ asset('images/galerie/' ~ image ) }}" alt="peinture">
-                </a>
-                {% endfor %}
+    <h2 class="card-title my-3 fw-semibold text-primary-emphasis">Peinture animal</h2>
+
+    <div class="d-flex flex-wrap">
+        <div class="row flex-wrap justify-content-around">
+            {% for image in images %}
+            <div class="col-sm-4 w-25 p-2">
+                <img class="img-fluid" src="{{ asset('images/galerie/' ~ image ) }}" alt="peinture" data-bs-toggle="modal" data-bs-target="#imageModal">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+<!-- Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        {% for image in images %}
+                        <div class="carousel-item {% if loop.first %}active{% endif %}">
+                            <img src="{{ asset('images/galerie/' ~ image ) }}" class="d-block w-100" alt="peinture">
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
             </div>
         </div>
-
     </div>
+</div>
 
 {% endblock %}

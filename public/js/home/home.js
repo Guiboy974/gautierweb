@@ -11,3 +11,5 @@ document.querySelectorAll('.my-lightbox-toggle').forEach((el) => el.addEventList
 	const lightbox = new Lightbox(el, options);
 	lightbox.show();
 }));
+
+
