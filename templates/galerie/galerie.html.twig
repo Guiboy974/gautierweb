@@ -30,7 +30,7 @@
                     <img class="p-2 w-25 h-auto img-fluid" src="{{ asset('images/galerie/' ~ image.filename ) }}"
                          alt="{{
                     image.altText
-                    }}">
+                    }}" data-bs-toggle="modal" data-bs-target="#imageModal">
                 {% endfor %}
             </div>
         </div>
