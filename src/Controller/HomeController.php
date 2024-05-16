@@ -2,6 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Categorie;
+use App\Repository\CategorieRepository;
+use App\Repository\ImageRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,12 +19,19 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/galerie/galerie.html.twig', name: 'app_galerie')]
-    public function show(): Response
+    #[Route('/galerie/{name}-{id}',
+        name: 'app_galerie',
+        requirements: ['id' => '\d+'],
+        defaults: ['name' => 'all', 'id' => '0']
+    )]
+    public function show(?Categorie $categorie, CategorieRepository $categorieRepository, ImageRepository $imageRepository): Response
     {
+        $images = null === $categorie ? $imageRepository->findAll() : $imageRepository->findBy(['categorie' =>$categorie]);
+
         return $this->render('galerie/galerie.html.twig', [
             'name' => 'Galerie',
-            'images' => array_filter(scandir("../public/images/galerie"), function ($val){return $val[0] != ".";})
+            'images' => $images,
+            "categories" => $categorieRepository->findAll(),
         ]);
     }
 }
