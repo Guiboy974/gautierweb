@@ -34,4 +34,12 @@ class HomeController extends AbstractController
             "categories" => $categorieRepository->findAll(),
         ]);
     }
+
+    #[Route('/lartiste/artiste.html.twig', name: 'app_artiste')]
+    public function blog(): Response
+    {
+        return $this->render('lartiste/artiste.html.twig', [
+            'name' => 'Lartiste',
+    ]);
+    }
 }
