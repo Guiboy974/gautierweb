@@ -28,7 +28,7 @@ class AdminController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToRoute('Retourner au site', 'fa fa-arrow-rotate-left', 'home');
+        yield MenuItem::linkToRoute('Retourner au site', 'fa fa-arrow-rotate-left', $this->'app_home');
 
         yield MenuItem::linkToDashboard('Tableau de bord', 'fa fa-home');
         yield MenuItem::SubMenu('Catégories', 'fa fa-list')->setSubItems([
