@@ -46,7 +46,7 @@ class ContactController extends AbstractController
             try {
                 $email = (new Email())
                     ->from($datas['email'])
-                    ->to('you@example.com')
+                    ->to('contact@azenia.fr')
                     ->subject('Time for Symfony Mailer!')
                     ->text($datas['message']);
                 $mailer->send($email);
